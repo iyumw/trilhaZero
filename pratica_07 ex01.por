@@ -3,16 +3,28 @@ programa
 	
 	funcao inicio()
 	{
-		real num
+		inteiro vet[10] 
+		inteiro i, j, aux
+		const inteiro TAMANHO = 10
 
-		escreva("Insira um número para ser verificado: ")
-		leia(num)
-		limpa()
+		para (i = 0; i < TAMANHO; i++){
+			escreva("Insira: ")
+			leia(vet[i])
+		}
 
-		se (num > 10){
-			escreva("Verdadeiro")
-		} senao {
-			escreva("Falso")
+		para (i = 0; i < TAMANHO - 1; i++){
+			para (j = i + 1; j < TAMANHO; j++){
+				se (vet[i] < vet [j]) {
+					aux = vet[i]
+					vet[i] = vet[j]
+					vet[j] = aux
+				}
+			}
+		}
+
+		escreva("Vetor ordenado em ordem decrescente: ")
+		para (i = 0; i < TAMANHO; i++){
+			escreva(vet[i], " ")
 		}
 	}
 }
@@ -21,9 +33,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 196; 
+ * @POSICAO-CURSOR = 475; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {vet, 6, 10, 3}-{i, 7, 10, 1}-{j, 7, 13, 1}-{aux, 7, 16, 3};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
